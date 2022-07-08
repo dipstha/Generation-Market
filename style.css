@@ -1,0 +1,27 @@
+body {
+    background-color: #F0FFFF;
+}
+.container {
+    width: 100%;
+     
+}
+
+.row {
+    /*border: black solid 1px;*/
+    width: 100%;
+    
+  }
+
+.col {
+    /*border: black solid 1px;*/
+    height: 100px;
+    
+  }
+
+footer {
+    border: white solid 2px;
+    /*position: fixed;
+    top: 509px;
+    left: -0.5px;
+    right: -0.5px;*/
+}
