@@ -9,8 +9,9 @@ body {
     fill: currentcolor;
 }
 
-
-
+form {
+    text-align: center;
+}
 footer {
     border: white solid 2px;
     /*position: fixed;

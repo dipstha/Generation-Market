@@ -42,27 +42,32 @@
     </header>
     <br><br>
     
-<form>
-    <label for="Items"></label>
-    <select id="items" name="Items">
-      <option value="items">Items</option>
-      <option value="kitchen">Kitchen</option>
-      <option value="outdoors">Outdoors</option>
-      <option value="electronics">Electronics</option>
-      <option value="equipment">Equipment</option>
-      <option value="clothes">Clothes</option>
-    </select>
-  </form>
-
-  <div class="input-group">
-    <div class="form-outline">
-      <input type="search" id="form1" value="Search" class="form-control" />
-      <label class="form-label" for="form1"></label>
+    <div class="container ">
+        <div class="row align-items-center ">
+            <div class="col-4"><form>
+                <label for="Items"></label>
+                <select id="items" name="Items">
+                  <option value="items">Items</option>
+                  <option value="kitchen">Kitchen</option>
+                  <option value="outdoors">Outdoors</option>
+                  <option value="electronics">Electronics</option>
+                  <option value="equipment">Equipment</option>
+                  <option value="clothes">Clothes</option>
+                </select>
+              </form></div>
+            <div class="col-8"><div class="input-group">
+                <div class="form-outline">
+                  <input type="search" id="form1" value="Search" class="form-control" />
+                  <label class="form-label" for="form1"></label>
+                </div>
+                <button type="button" style="height:37px">
+                    <i class="bi bi-search"></i>
+                </button>
+              </div></div>
+        </div>
     </div>
-    <button type="button" style="height:37px">
-        <i class="bi bi-search"></i>
-    </button>
-  </div>
+
+  
   <br><br><br>
 
   <div class="row row-cols-1 row-cols-md-3 g-4">
