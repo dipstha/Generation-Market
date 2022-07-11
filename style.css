@@ -6,6 +6,11 @@ body {
      border: 1px solid black;
 }
 
+.form-container {
+  border: 1px solid black;
+  
+}
+
 .row {
     /*border: black solid 1px;*/
     width: 100%;
