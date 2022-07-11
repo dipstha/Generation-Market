@@ -3,7 +3,12 @@ body {
 }
 .container {
     width: 100%;
-     
+     border: 1px solid black;
+}
+
+.form-container {
+  border: 1px solid black;
+  
 }
 
 .row {
@@ -24,4 +29,10 @@ footer {
     top: 509px;
     left: -0.5px;
     right: -0.5px;*/
+    
 }
+
+footer .nav-item {
+  padding-left: 40px;
+}
+
