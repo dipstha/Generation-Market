@@ -31,3 +31,12 @@ footer .nav-item {
   padding-left: 40px;
 }
 
+.container{
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: auto;
+  height: fit-content;
+}
+.col, .row{
+  border: 1px solid black;
+}
