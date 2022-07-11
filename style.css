@@ -3,7 +3,12 @@ body {
 }
 .container {
     width: 100%;
-     
+     border: 1px solid black;
+}
+
+.form-container {
+  border: 1px solid black;
+  
 }
 
 .row {
