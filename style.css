@@ -1,10 +1,26 @@
 body {
     background-color: #F0FFFF;
+    font-family: cursive;
 }
 .container {
     width: 100%;
      
 }
+
+.form-container {
+  display: grid;
+  justify-items: center;
+  
+
+}
+
+.form-container, h1 {
+  /* width: 600px; */
+  text-align: center;
+  
+}
+
+
 
 .row {
     /*border: black solid 1px;*/
@@ -24,4 +40,11 @@ footer {
     top: 509px;
     left: -0.5px;
     right: -0.5px;*/
+    
 }
+
+footer .nav-item {
+  padding-left: 40px;
+}
+
+

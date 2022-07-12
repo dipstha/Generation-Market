@@ -1,0 +1,22 @@
+body {
+    background-color: #F0FFFF;
+    font-family: cursive;
+}
+
+.carousel-inner .carousel-item img {
+    width: 500px;
+    height: 300px;
+}
+
+.carousel {
+    width: 100%;
+    height: 300px;
+}
+
+footer {
+    border: white solid 2px;
+    /*position: fixed;
+    top: 509px;
+    left: -0.5px;
+    right: -0.5px;*/
+}
