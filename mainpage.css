@@ -19,4 +19,9 @@ footer {
     top: 509px;
     left: -0.5px;
     right: -0.5px;*/
+    
+}
+
+footer .nav-item {
+  padding-left: 40px;
 }
