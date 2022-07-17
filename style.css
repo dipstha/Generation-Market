@@ -20,8 +20,6 @@ body {
   
 }
 
-
-
 .row {
     /*border: black solid 1px;*/
     width: 100%;
@@ -40,7 +38,12 @@ footer {
     top: 509px;
     left: -0.5px;
     right: -0.5px;*/
-    
+}
+
+#loginButtons {
+ position: absolute;
+ top: 200px;
+ right: 700px;
 }
 
 footer .nav-item {
