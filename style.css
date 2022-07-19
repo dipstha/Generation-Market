@@ -40,14 +40,13 @@ footer {
     right: -0.5px;*/
 }
 
+
+
 #loginButtons {
-  position: absolute;
-  top: 75px;
-  right: 400px;
-  left: 400px;
-  padding-left: 20px;
-  padding-right: 20px;
+    display: grid;
+    justify-content: center;
  }
+ 
 
 footer .nav-item {
   padding-left: 40px;
