@@ -1,7 +1,20 @@
+li:hover {
+  /*background-color: #7bbfbf;*/
+  transform: scale(1.1);
+  border: #d8fcfc solid 1px;
+  height: 45px;
+}
+
+.navbar {
+  height: 50px;
+  background-color: #81c9c9;
+}
+
 body {
-    background-color: #F0FFFF;
+  background-color: #e2eef0;
     font-family: cursive;
 }
+
 .container {
     width: 100%;
      
@@ -34,6 +47,7 @@ body {
 
 footer {
     border: white solid 2px;
+    background-color: #81c9c9;
     /*position: fixed;
     top: 509px;
     left: -0.5px;
@@ -46,6 +60,11 @@ footer {
     display: grid;
     justify-content: center;
  }
+
+ .btn {
+  background-color: #81c9c9;
+  border: #81c9c9;
+}
  
 
 footer .nav-item {
