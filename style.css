@@ -71,6 +71,31 @@ footer .nav-item {
   padding-left: 40px;
 }
 
+.container-products {
+  display: grid;
+  /* grid-template-columns: 1fr; */
+  grid-auto-rows: auto;
+  width: 100%;
+  height: 700px;
+  border: 1px solid black;
+  
+  
+  
+}
+
+.card {
+  display: grid;
+  margin: auto;
+  align-items: center;
+  justify-items: center;
+  width: 400px;
+}
+.card img {
+  height: 200px;
+  width: auto;
+}
+
+
 .grid {
   display: grid;
   width: 500px;
