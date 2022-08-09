@@ -14,6 +14,19 @@ class ProductsController {
             createdAt: createdAt
         };
         this.products.push(product);
+
+        localStorage.setItem("products", JSON.stringify(this.products));
+    }
+
+    productsFromLocalStorage() {
+        const storageproducts = localStorage.getItem("products")
+        if (storageproducts) {
+            const products = JSON.parse(storageproducts)
+            for (let i = 0; i < products.length; i++) {
+                const product = products[i];
+                this.products.push(product);
+            }
+        }
     }
 }
 
