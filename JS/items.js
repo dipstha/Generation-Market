@@ -3,6 +3,7 @@ const productsController = new ProductsController(0);
 function addProductCard(products) {
         const htmlCode =
           `
+            <div class="card h-100 text-right w-100">
             <div class="row no-gutters">
             <div class="col-md-4">
             <img src="${products.img}" class="card-img-top">
@@ -14,11 +15,14 @@ function addProductCard(products) {
             <p class="card-created">${products.createdAt}</p>
             </div>
             </div>
+            </div>
+            </div>
+            <br>
         `;
       
       const productCards = document.querySelector("#list-products");
       
-      productCards.innerHTML = htmlCode;
+      productCards.innerHTML += htmlCode;
 }
 
 function savesSamples(){
