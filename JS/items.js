@@ -1,3 +1,5 @@
+import { ProductsController } from "./itemsController.js"
+
 const productsController = new ProductsController(0);
 
 function addProductCard(products) {
