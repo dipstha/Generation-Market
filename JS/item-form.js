@@ -15,8 +15,8 @@ const newProductForm = (event) => {
   const name = newItemName.value;
   const description = newItemDescription.value;
   const imageUrl = newItemImageUrl.value;
-  const createdAt = newItemCreatedAt.value;
-
+  const createdAt = new Date().toLocaleDateString('en-US')
+  
   /*
     Validation code here
 */
