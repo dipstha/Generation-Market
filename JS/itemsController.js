@@ -32,9 +32,10 @@ class ProductsController {
 
 let items = new ProductsController();
 
-items.addItem('Laptop', 'fastest comp with a huge RAM', '../images/compathome.jpg', '2022-07-13');
-items.addItem('hammer', 'The best', '../images/comp.jpg', '2019-02-01');
-items.addItem('Toys', 'Fun', '../images/outdoors.jpg', '2021-12-20');
+items.addItem('Pan', 'Grey stainless steel pan', '../images/pan.jpg', '2022-07-13');
+items.addItem('Notebook', 'Spiral Notebook - ruled paper', '../images/notebook.jpg', '2019-02-01');
+items.addItem('Bowls and a Teapot', 'A set of 6 white porcelain bowls with a teapot'
+, '../images/bowls.jpg', '2021-12-20');
 console.log(items);
 
 export { ProductsController }
