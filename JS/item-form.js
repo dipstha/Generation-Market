@@ -10,8 +10,7 @@ const newProductForm = (event) => {
   const newItemName = document.getElementById("newItemName");
   const newItemDescription = document.getElementById("newItemDescription");
   const newItemImageUrl = document.getElementById("newItemImageUrl");
-  const newItemCreatedAt = document.getElementById("newItemCreatedAt");
-
+ 
   const name = newItemName.value;
   const description = newItemDescription.value;
   const imageUrl = newItemImageUrl.value;
