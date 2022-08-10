@@ -71,16 +71,9 @@
 
           <div class="form-group">
             <label for="newItemDescription">Description</label>
-            <input type="text" class="form-control"id="newItemDescription">
+            <textarea type="text" class="form-control" id="newItemDescription"></textarea>
           </div>
-          <!-- <label>
-                     <h4>Multiple Items </h4>
-                        <select>  
-                          <option value="">---</option>                       
-                          <option value="">Yes</option>
-                          <option value="">No</option>
-                        </select>
-                      </label> -->
+          
           <span class="navbar-toggler-icon"></span>
           <div class="form-group">
             <label for="newItemImageUrl">Image URL</label>
@@ -91,8 +84,9 @@
           </div> -->
           <br>
           <div class="form-group">
-            <label for="newItemCreatedAt">Created At</label>
-            <input type="text" class="form-control" id="newItemCreatedAt">
+            <label for="newItemCreatedAt">Created At</label><br>
+            <input type="date" id="newItemCreatedAt" required>
+            <!-- <input type="text" class="form-control" id="newItemCreatedAt"> -->
           </div>
           <br>
           <button type="submit" id="submit" class="btn btn-primary btn-block">Add Item</button>
