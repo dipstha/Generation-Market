@@ -20,7 +20,7 @@
   <title>Add Item</title>
 </head>
 
-<body style="background-color: #e2eef0;">
+<body style="background-color: #e2eef0; font-family: cursive;">
 
   <header>
     <nav class="navbar navbar-expand-sm navbar-dark">
@@ -71,7 +71,7 @@
 
           <div class="form-group">
             <label for="newItemDescription">Description</label>
-            <textarea type="text" class="form-control" id="newItemDescription"></textarea>
+            <input type="text" class="form-control"id="newItemDescription">
           </div>
           <!-- <label>
                      <h4>Multiple Items </h4>
@@ -89,9 +89,15 @@
           <!-- <div class="alert alert-info">
             <strong>Remember!</strong> use comma between multiple URL's.
           </div> -->
+          <br>
+          <div class="form-group">
+            <label for="newItemCreatedAt">Created At</label>
+            <input type="text" class="form-control" id="newItemCreatedAt">
+          </div>
+          <br>
           <button type="submit" id="submit" class="btn btn-primary btn-block">Add Item</button>
         </form>
-
+<br><br><br>
       </div>
     </div>
   </div>
@@ -107,7 +113,7 @@
     crossorigin="anonymous"></script>
 
 
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-*-*"></div>
     <div class="col-*-*"></div>
   </div>
@@ -115,14 +121,14 @@
     <div class="col-*-*"></div>
     <div class="col-*-*"></div>
     <div class="col-*-*"></div>
-  </div>
+  </div> -->
 
   <!-- Or let Bootstrap automatically handle the layout -->
-  <div class="row">
+  <!-- <div class="row">
     <div class="col"></div>
     <div class="col"></div>
     <div class="col"></div>
-  </div>
+  </div> -->
   <br>
 
   <script src="./JS/itemsController.js" type="module"></script>
