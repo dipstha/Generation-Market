@@ -36,3 +36,5 @@ items.addItem('Laptop', 'fastest comp with a huge RAM', '../images/compathome.jp
 items.addItem('hammer', 'The best', '../images/comp.jpg', '2019-02-01');
 items.addItem('Toys', 'Fun', '../images/outdoors.jpg', '2021-12-20');
 console.log(items);
+
+export { ProductsController }
