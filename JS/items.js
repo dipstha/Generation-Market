@@ -5,7 +5,7 @@ const productsController = new ProductsController(0);
 function addProductCard(products) {
         const htmlCode =
           `
-            <div class="card h-100 text-right w-100">
+            <div class="card h-100 text-right ">
             <div class="row no-gutters">
             <div class="col-md-4">
             <img src="${products.img}" class="card-img-top">
