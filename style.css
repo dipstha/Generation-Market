@@ -23,8 +23,6 @@ body {
 .form-container {
   display: grid;
   justify-items: center;
-
-
 }
 
 .form-container,
@@ -72,15 +70,14 @@ footer .nav-item {
   padding-left: 40px;
 }
 
-.container-products {
+/* .container-products {
   display: grid;
   /* grid-template-columns: 1fr; */
-  grid-auto-rows: auto;
+/* grid-auto-rows: auto;
   width: 100%;
-  height: 700px;
-  /* border: 1px solid black; */
-
-}
+  height: 700px; */
+/* border: 1px solid black; */
+/* }  */
 
 .card {
   display: grid;
