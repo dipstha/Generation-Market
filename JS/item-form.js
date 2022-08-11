@@ -1,10 +1,11 @@
-import { ProductsController } from "./itemsController.js"
+
 
 const newProduct = new ProductsController(0);
 
+ import { ProductsController } from "./itemsController.js"
 const btn = document.getElementById("submit");
 
-const newProductForm = (event) => {
+function newProductForm(event) {
   event.preventDefault();
 
   const newItemName = document.getElementById("newItemName");
@@ -21,8 +22,8 @@ const newProductForm = (event) => {
   newItemName.value = "";
   newItemDescription.value = "";
   newItemImageUrl.value = "";
-  newItemCreatedAt.value = "";
-
+  
 };
 
 btn.addEventListener("click", newProductForm);
+

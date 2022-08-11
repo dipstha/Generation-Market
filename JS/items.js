@@ -1,4 +1,5 @@
-import { ProductsController } from "./itemsController.js"
+ import { ProductsController } from './itemsController.js'; 
+ 
 
 const productsController = new ProductsController(0);
 
@@ -22,13 +23,18 @@ function addProductCard(products) {
             <br>
         `;
       
-      const productCards = document.querySelector("#list-products");
+      const productCards = document.getElementById("list-products");
       
-      productCards.innerHTML += htmlCode;
+    
+      if(document.getElementById("list-products") != null){
+        productCards.innerHTML += htmlCode;
+    } 
+    //  productCards.innerHTML += htmlCode;
+    
 }
 
 function savesSamples(){
-        if(!localStorage.getItem("products")){
+       if(!localStorage.getItem("products")){
             const sampleProducts = [{'name':'Monitor',
         'description':'Used AOC 24" 1080P',
         'img':'./images/Monitor.jpg',
