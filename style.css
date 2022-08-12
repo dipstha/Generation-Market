@@ -62,6 +62,7 @@ footer {
 #loginButtons {
   display: grid;
   justify-content: center;
+  
 }
 
 .btn {
@@ -96,6 +97,13 @@ footer .nav-item {
   width: auto;
   text-align: center;
   padding-left: 50px;
+}
+
+#newItemForm span {
+  bottom: 12px; 
+  right: 17px;
+  font-size: 14px;
+  color: red;
 }
 
 
