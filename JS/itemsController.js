@@ -6,58 +6,60 @@ class ProductsController {
 
   addItem(name, description, img, createdAt) {
     const product = {
-     // id: this.currentId++,
+      //id: this.currentId++,
       name: name,
       description: description,
       img: img,
       createdAt: createdAt,
     };
-   // this.products.push(product);
+    this.products.push(product);
 
-    //localStorage.setItem("products", JSON.stringify(this.products));
+    localStorage.setItem("products", JSON.stringify(this.products));
 
-    // this.uploadItem({ name, description, img, createdAt });
-
-    fetch("http://localhost:8080/api/items/add", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(this.product),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success:", data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+     this.save({ name, description, img });
   }
 
-  save(name, description, img, createdAt) {
+  save({ name, description, img }) {
     const data = {
-      id: this.currentId++,
-      name: name,
-      description: description,
-      img: img,
-      createdAt: createdAt,
-    };
+      name,
+      description,
+      img,
+    }
+
+    fetch('http://localhost:8080/api/items/add', {
+      method: 'POST', 
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+      })
+      .then(response => response.json())
+      .then(data => {
+      console.log('Success:', data);
+      })
+      .catch((error) => {
+      console.error('Error:', error);
+      });
 
     // const asyncPost = async () => {
+    //   try {
     //   const rawResponse = await fetch("http://localhost:8080/api/items/add", {
     //     method: "POST",
     //     headers: {
-    //       'Accept': 'application/json',
-    //       'Content-Type': 'application/json',
+    //       "Content-Type": "application/json",
     //     },
     //     body: JSON.stringify(data),
     //   });
     //   const content = await rawResponse.json();
     //   console.log(content);
+    // } catch(error) {
+    //   console.log(error)
     // }
+    // };
+    // asyncPost();
   }
 
-  update({ name, description, img, createdAt }) {
+  updateItem({ name, description, img}) {
     //TODO
   }
 
