@@ -6,7 +6,7 @@ class ProductsController {
 
   addItem(name, description, img, createdAt) {
     const product = {
-      id: this.currentId++,
+      //id: this.currentId++,
       name: name,
       description: description,
       img: img,
@@ -16,35 +16,56 @@ class ProductsController {
 
     localStorage.setItem("products", JSON.stringify(this.products));
 
-    this.uploadItem({ name, description, img, createdAt });
+     this.save({ name, description, img });
   }
 
-  save({ name, description, img, createdAt }) {
-    const data = { name, description, img, createdAt };
+  save({ name, description, img }) {
+    const data = {
+      name,
+      description,
+      img,
+    }
 
-    fetch(`http://localhost:8080/api/items/add`, {
-      method: "POST",
+    fetch('http://localhost:8080/api/items/add', {
+      method: 'POST', 
       headers: {
-        "Content-Type": "application/json",
+          'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(`Success:`, data);
+      })
+      .then(response => response.json())
+      .then(data => {
+      console.log('Success:', data);
       })
       .catch((error) => {
-        console.log(`Error:`, error);
+      console.error('Error:', error);
       });
-  };
 
-  update({name, description, img, createdAt}) {
-        //TODO
-  };
+    // const asyncPost = async () => {
+    //   try {
+    //   const rawResponse = await fetch("http://localhost:8080/api/items/add", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(data),
+    //   });
+    //   const content = await rawResponse.json();
+    //   console.log(content);
+    // } catch(error) {
+    //   console.log(error)
+    // }
+    // };
+    // asyncPost();
+  }
+
+  updateItem({ name, description, img}) {
+    //TODO
+  }
 
   delete(id) {
     //TODO
-  };
+  }
 
   findById(id) {
     //TODO
