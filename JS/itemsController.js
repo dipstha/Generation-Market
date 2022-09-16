@@ -4,19 +4,19 @@ class ProductsController {
     this.currentId = currentId;
   }
 
-  addItem(name, description, img, createdAt) {
+  addItem(name, description, img) {
     const product = {
       //id: this.currentId++,
       name: name,
       description: description,
       img: img,
-      createdAt: createdAt,
+      //createdAt: createdAt,
     };
     this.products.push(product);
 
     localStorage.setItem("products", JSON.stringify(this.products));
 
-     this.save({ name, description, img });
+    this.save({ name, description, img });
   }
 
   save({ name, description, img }) {
@@ -24,58 +24,124 @@ class ProductsController {
       name,
       description,
       img,
-    }
+    };
 
-    fetch('http://localhost:8080/api/items/add', {
-      method: 'POST', 
-      headers: {
-          'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-      })
-      .then(response => response.json())
-      .then(data => {
-      console.log('Success:', data);
-      })
-      .catch((error) => {
-      console.error('Error:', error);
-      });
-
-    // const asyncPost = async () => {
-    //   try {
-    //   const rawResponse = await fetch("http://localhost:8080/api/items/add", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(data),
+    // fetch('http://localhost:8080/api/items/add', {
+    //   method: 'POST',
+    //   headers: {
+    //       'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(data),
+    //   })
+    //   .then(response => response.json())
+    //   .then(data => {
+    //   console.log('Save Success:', data);
+    //   })
+    //   .catch((error) => {
+    //   console.error('Save Error:', error);
     //   });
-    //   const content = await rawResponse.json();
-    //   console.log(content);
-    // } catch(error) {
-    //   console.log(error)
-    // }
-    // };
-    // asyncPost();
+
+    const asyncPost = async () => {
+      try {
+        const rawResponse = await fetch("http://localhost:8080/api/items/add", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+        const content = await rawResponse.json();
+        console.log(content);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    asyncPost();
   }
 
-  updateItem({ name, description, img}) {
-    //TODO
+  updateItem({ name, description, img }) {
+    const data = {
+      name,
+      description,
+      img,
+    };
+
+    fetch("http://localhost:8080/api/items/{id}", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Update Success:", data);
+      })
+      .catch((error) => {
+        console.error("Update Error:", error);
+      });
   }
 
   delete(id) {
-    //TODO
+    fetch("http://localhost:8080/api/items/" + id, {
+      method: "DELETE",
+    })
+      .then((data) => {
+        console.log("Delete Success:", data);
+      })
+      .catch((error) => {
+        console.error("Delete Error:", error);
+      });
   }
 
   findById(id) {
-    //TODO
+    fetch("http://localhost:8080/api/items/" + id, {
+      method: "GET",
+    })
+      .then((data) => {
+        console.log("Find Success:", data);
+      })
+      .catch((error) => {
+        console.error("Find Error:", error);
+      });
+  }
+
+  getAll() {
+    fetch("http://localhost:8080/api/items/all", {
+      method: "GET",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((data) => {
+        return data.json();
+      })
+      .then((info) => {
+        console.log("info", info);
+        JSON.stringify(info)
+        return info;
+      })
+      .then((error) => {
+        console.error("GetAll Error:", error);
+      });
+
+    // let products = (this.info);
+    // console.log("products",products)
+    // for (let i = 0; i < info.length; i++) {
+    //   const product = products[i];
+    //   this.products.push(product);
+    // }
   }
 
   productsFromLocalStorage() {
     const storageproducts = localStorage.getItem("products");
+    console.log("storage", storageproducts);
+
     if (storageproducts) {
       const products = JSON.parse(storageproducts);
-      for (let i = 0; i < products.length; i++) {
+
+      for (let i = 0; i < storageproducts.length; i++) {
         const product = products[i];
         this.products.push(product);
       }
