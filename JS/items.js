@@ -6,9 +6,9 @@ let api_url = "http://localhost:8080/api/items/all";
 const getAllApi = async (url) => {
   const response = await fetch(url);
 
- let data = await response.json();
- console.log(data);
- showData(data);
+  let data = await response.json();
+  console.log(data);
+  showData(data);
 };
 getAllApi(api_url);
 
@@ -31,41 +31,41 @@ function showData(data) {
           </div>
           <br>
       `;
-  
-  const productCards = document.getElementById("list-products");
 
-  if (document.getElementById("list-products") != null) {
-    productCards.innerHTML += htmlCode;
+    const productCards = document.getElementById("list-products");
+
+    if (document.getElementById("list-products") != null) {
+      productCards.innerHTML += htmlCode;
+    }
   }
 }
-}
 
-function addProductCard(products) {
-  const htmlCode = `
-            <div class="card h-100 text-right ">
-            <div class="row no-gutters">
-            <div class="col-md-4">
-            <img src="${products.img}" class="${products.id} card-img-top">
-            </div>
-            <div class="col-md-8">
-            <div class="card-body">
-            <h3 class="card-name">${products.name}</h3>
-            <p class="card-description">${products.description}</p>
-            <p class="card-created">${products.createdAt}</p>
-            </div>
-            </div>
-            </div>
-            </div>
-            <br>
-        `;
+// function addProductCard(products) {
+//   const htmlCode = `
+//             <div class="card h-100 text-right ">
+//             <div class="row no-gutters">
+//             <div class="col-md-4">
+//             <img src="${products.img}" class="${products.id} card-img-top">
+//             </div>
+//             <div class="col-md-8">
+//             <div class="card-body">
+//             <h3 class="card-name">${products.name}</h3>
+//             <p class="card-description">${products.description}</p>
+//             <p class="card-created">${products.createdAt}</p>
+//             </div>
+//             </div>
+//             </div>
+//             </div>
+//             <br>
+//         `;
 
-  const productCards = document.getElementById("list-products");
+//   const productCards = document.getElementById("list-products");
 
-  if (document.getElementById("list-products") != null) {
-    productCards.innerHTML += htmlCode;
-  }
-  //  productCards.innerHTML += htmlCode;
-}
+//   if (document.getElementById("list-products") != null) {
+//     productCards.innerHTML += htmlCode;
+//   }
+//   //  productCards.innerHTML += htmlCode;
+// }
 
 // function savesSamples() {
 //   if (!localStorage.getItem("products")) {
