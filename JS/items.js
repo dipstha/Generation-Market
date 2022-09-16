@@ -9,7 +9,7 @@ function addProductCard(products) {
             <div class="card h-100 text-right ">
             <div class="row no-gutters">
             <div class="col-md-4">
-            <img src="${products.img}" class="card-img-top">
+            <img src="${products.img}" class="${products.id} card-img-top">
             </div>
             <div class="col-md-8">
             <div class="card-body">
@@ -60,5 +60,6 @@ function cardsProductsController(){
     }
 
 savesSamples();
+//productsController.getAll();
 productsController.productsFromLocalStorage();
 cardsProductsController();

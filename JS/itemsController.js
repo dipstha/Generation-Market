@@ -16,59 +16,123 @@ class ProductsController {
 
     localStorage.setItem("products", JSON.stringify(this.products));
 
-     this.save({ name, description, img });
+    this.save({ name, description, img, createdAt});
   }
 
-  save({ name, description, img }) {
+  save({ name, description, img, createdAt }) {
     const data = {
       name,
       description,
       img,
-    }
+      createdAt
+    };
 
-    fetch('http://localhost:8080/api/items/add', {
-      method: 'POST', 
+    // fetch('http://localhost:8080/api/items/add', {
+    //   method: 'POST',
+    //   headers: {
+    //       'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(data),
+    //   })
+    //   .then(response => response.json())
+    //   .then(data => {
+    //   console.log('Save Success:', data);
+    //   })
+    //   .catch((error) => {
+    //   console.error('Save Error:', error);
+    //   });
+
+    const asyncPost = async () => {
+      try {
+        const rawResponse = await fetch("http://localhost:8080/api/items/add", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+        const content = await rawResponse.json();
+        console.log(content);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    asyncPost();
+  }
+  // not implemented
+  updateItem({ name, description, img }) {
+    const data = {
+      name,
+      description,
+      img,
+    };
+
+    fetch("http://localhost:8080/api/items/{id}", {
+      method: "PUT",
       headers: {
-          'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-      })
-      .then(response => response.json())
-      .then(data => {
-      console.log('Success:', data);
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Update Success:", data);
       })
       .catch((error) => {
-      console.error('Error:', error);
+        console.error("Update Error:", error);
+      });
+  }
+  // not implemented
+  delete(id) {
+    fetch("http://localhost:8080/api/items/" + id, {
+      method: "DELETE",
+    })
+      .then((data) => {
+        console.log("Delete Success:", data);
+      })
+      .catch((error) => {
+        console.error("Delete Error:", error);
+      });
+  }
+  // not implemented
+  findById(id) {
+    fetch("http://localhost:8080/api/items/" + id, {
+      method: "GET",
+    })
+      .then((data) => {
+        console.log("Find Success:", data);
+      })
+      .catch((error) => {
+        console.error("Find Error:", error);
+      });
+  }
+  // not implemented
+  getAll() {
+    fetch("http://localhost:8080/api/items/all", {
+      method: "GET",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+      },
+    })
+      .then((data) => {
+        return data.json();
+      })
+      .then((info) => {
+        console.log("info", info);
+        JSON.stringify(info);
+        return info;
+      })
+      .then((error) => {
+        console.error("GetAll Error:", error);
       });
 
-    // const asyncPost = async () => {
-    //   try {
-    //   const rawResponse = await fetch("http://localhost:8080/api/items/add", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(data),
-    //   });
-    //   const content = await rawResponse.json();
-    //   console.log(content);
-    // } catch(error) {
-    //   console.log(error)
+    // let products = (this.info);
+    // console.log("products",products)
+    // for (let i = 0; i < info.length; i++) {
+    //   const product = products[i];
+    //   this.products.push(product);
     // }
-    // };
-    // asyncPost();
-  }
-
-  updateItem({ name, description, img}) {
-    //TODO
-  }
-
-  delete(id) {
-    //TODO
-  }
-
-  findById(id) {
-    //TODO
   }
 
   productsFromLocalStorage() {
