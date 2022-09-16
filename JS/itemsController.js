@@ -6,7 +6,7 @@ class ProductsController {
 
   addItem(name, description, img, createdAt) {
     const product = {
-      //id: this.currentId++,
+      id: this.currentId++,
       name: name,
       description: description,
       img: img,
@@ -107,45 +107,45 @@ class ProductsController {
       });
   }
   // not implemented
-  getAll() {
-    fetch("http://localhost:8080/api/items/all", {
-      method: "GET",
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/json",
-      },
-    })
-      .then((data) => {
-        return data.json();
-      })
-      .then((info) => {
-        console.log("info", info);
-        JSON.stringify(info);
-        return info;
-      })
-      .then((error) => {
-        console.error("GetAll Error:", error);
-      });
+  // getAll() {
+  //   fetch("http://localhost:8080/api/items/all", {
+  //     method: "GET",
+  //     headers: {
+  //      // "Access-Control-Allow-Origin": "*",
+  //      // "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((data) => {
+  //       return  data.json();
+  //     })
+  //     .then((info) => {
+  //       console.log("info", info);
 
-    // let products = (this.info);
-    // console.log("products",products)
-    // for (let i = 0; i < info.length; i++) {
-    //   const product = products[i];
-    //   this.products.push(product);
-    // }
-  }
+  //       const products = info;
+  //       console.log("products", products);
+  //       return products;
+  //       // for (let i = 0; i < info.length; i++) {
+  //       //   const product = info[i];
+  //       //   info.push(product);
+  //       // }
+  //     })
+  //     .then((error) => {
+  //       console.error("GetAll Error:", error);
+  //     });
+  // }
 
-  productsFromLocalStorage() {
-    const storageproducts = localStorage.getItem("products");
-    if (storageproducts) {
-      const products = JSON.parse(storageproducts);
-      for (let i = 0; i < products.length; i++) {
-        const product = products[i];
-        this.products.push(product);
-      }
-    }
-  }
-}
+//   productsFromLocalStorage() {
+//     const storageproducts = localStorage.getItem("products");
+//     if (storageproducts) {
+//       const products = JSON.parse(storageproducts);
+//       console.log("storage",products);
+//       for (let i = 0; i < products.length; i++) {
+//         const product = products[i];
+//         this.products.push(product);
+//       }
+//     }
+//   }
+ }
 
 // const items = new ProductsController();
 
