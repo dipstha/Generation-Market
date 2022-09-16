@@ -119,7 +119,7 @@ class ProductsController {
       })
       .then((info) => {
         console.log("info", info);
-        JSON.stringify(info)
+        JSON.stringify(info);
         return info;
       })
       .then((error) => {
@@ -136,12 +136,9 @@ class ProductsController {
 
   productsFromLocalStorage() {
     const storageproducts = localStorage.getItem("products");
-    console.log("storage", storageproducts);
-
     if (storageproducts) {
       const products = JSON.parse(storageproducts);
-
-      for (let i = 0; i < storageproducts.length; i++) {
+      for (let i = 0; i < products.length; i++) {
         const product = products[i];
         this.products.push(product);
       }
