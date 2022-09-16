@@ -4,26 +4,27 @@ class ProductsController {
     this.currentId = currentId;
   }
 
-  addItem(name, description, img) {
+  addItem(name, description, img, createdAt) {
     const product = {
       //id: this.currentId++,
       name: name,
       description: description,
       img: img,
-      //createdAt: createdAt,
+      createdAt: createdAt,
     };
     this.products.push(product);
 
     localStorage.setItem("products", JSON.stringify(this.products));
 
-    this.save({ name, description, img });
+    this.save({ name, description, img, createdAt});
   }
 
-  save({ name, description, img }) {
+  save({ name, description, img, createdAt }) {
     const data = {
       name,
       description,
       img,
+      createdAt
     };
 
     // fetch('http://localhost:8080/api/items/add', {
