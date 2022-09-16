@@ -59,7 +59,7 @@ class ProductsController {
     };
     asyncPost();
   }
-
+  // not implemented
   updateItem({ name, description, img }) {
     const data = {
       name,
@@ -82,7 +82,7 @@ class ProductsController {
         console.error("Update Error:", error);
       });
   }
-
+  // not implemented
   delete(id) {
     fetch("http://localhost:8080/api/items/" + id, {
       method: "DELETE",
@@ -94,7 +94,7 @@ class ProductsController {
         console.error("Delete Error:", error);
       });
   }
-
+  // not implemented
   findById(id) {
     fetch("http://localhost:8080/api/items/" + id, {
       method: "GET",
@@ -106,7 +106,7 @@ class ProductsController {
         console.error("Find Error:", error);
       });
   }
-
+  // not implemented
   getAll() {
     fetch("http://localhost:8080/api/items/all", {
       method: "GET",
